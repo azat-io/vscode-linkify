@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "DOM", "WebWorker", "DOM.Iterable"],
+    "noPropertyAccessFromIndexSignature": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsxImportSource": "@builder.io/qwik",
+    "noUncheckedIndexedAccess": true,
+    "allowUnreachableCode": false,
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "noImplicitReturns": true,
+    "types": ["vite/client"],
+    "strictNullChecks": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "outDir": "tmp",
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx"]
+}
