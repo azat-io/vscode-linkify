@@ -1,7 +1,7 @@
 {
   "name": "vscode-linkify",
-  "displayName": "Linkify",
-  "version": "0.1.0",
+  "displayName": "VS Code Linkify",
+  "version": "1.0.0",
   "description": "VS Code extension to quickly and effortlessly link local npm package in one click",
   "keywords": [
     "vscode",
