@@ -67,11 +67,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -108,11 +108,11 @@ describe('npmLink', () => {
 
     vi.mocked(fs.readFile).mockResolvedValueOnce(JSON.stringify({}))
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -141,11 +141,11 @@ describe('npmLink', () => {
       JSON.stringify({ name: 'different-package-name' }),
     )
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -199,11 +199,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -257,11 +257,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -319,11 +319,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -377,11 +377,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -436,11 +436,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -494,11 +494,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -556,11 +556,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -618,11 +618,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -680,11 +680,11 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
@@ -705,11 +705,11 @@ describe('npmLink', () => {
   it('should return error if package directory does not exist', async () => {
     vi.mocked(fs.stat).mockRejectedValueOnce(new Error('Directory not found'))
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(result.success).toBeFalsy()
     expect(result.message).toContain('Failed to create link')
@@ -719,11 +719,11 @@ describe('npmLink', () => {
     let error = 'Directory not found' as unknown as Error
     vi.mocked(fs.stat).mockRejectedValueOnce(error)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(result.success).toBeFalsy()
     expect(result.message).toContain('Failed to create link')
@@ -734,11 +734,11 @@ describe('npmLink', () => {
       isDirectory: () => false,
     } as unknown as Stats)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(result.success).toBeFalsy()
     expect(result.message).toContain('Package directory does not exist')
@@ -754,11 +754,11 @@ describe('npmLink', () => {
       throw new Error('File not found')
     })
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(result.success).toBeFalsy()
     expect(result.message).toContain('Failed to create link')
@@ -777,11 +777,11 @@ describe('npmLink', () => {
       throw new Error('File not found')
     })
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(result.success).toBeFalsy()
     expect(result.message).toContain('No package.json found')
@@ -824,15 +824,1498 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(result.success).toBeFalsy()
     expect(result.message).toContain('Failed to create link')
     expect(result.error).toBeDefined()
+  })
+
+  it('should handle workspace error with "cannot find module" and "workspace:" message', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'pnpm',
+      name: 'pnpm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('cannot find module with workspace: dependency'),
+          '',
+          'cannot find module with workspace: dependency',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'pnpm add --save /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'prod',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add when link fails with workspace error', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'pnpm',
+      name: 'pnpm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'pnpm add --save /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'prod',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'pnpm link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'pnpm add --save /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should handle normalizeDependencyType with undefined type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'npm',
+      name: 'npm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'npm install --save /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'npm install --save /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+  })
+
+  it('should handle normalizeDependencyType with unknown type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'npm',
+      name: 'npm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'npm install --save /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      dependencyType: 'unknown-type',
+      packageName: 'package-name',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'npm install --save /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+  })
+
+  it('should handle unknown package manager in getAddCommand', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      agent: 'unknown-manager',
+      name: 'unknown-manager',
+      version: '1.0.0',
+    } as unknown as DetectResult)
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'npm install --save-dev /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'dev',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'npm link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'npm install --save-dev /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+  })
+
+  it('should fallback to add with yarn package manager and peer dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '1.22.0',
+      agent: 'yarn',
+      name: 'yarn',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'yarn add --peer /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'peer',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'yarn link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'yarn add --peer /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with yarn package manager and optional dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '1.22.0',
+      agent: 'yarn',
+      name: 'yarn',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'yarn add --optional /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'optional',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'yarn link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'yarn add --optional /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with bun package manager and peer dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '1.0.0',
+      agent: 'bun',
+      name: 'bun',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'bun install --peer /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'peer',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'bun link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'bun install --peer /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with bun package manager and dev dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '1.0.0',
+      agent: 'bun',
+      name: 'bun',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'bun install --dev /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'dev',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'bun link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'bun install --dev /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with bun package manager and optional dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '1.0.0',
+      agent: 'bun',
+      name: 'bun',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'bun install /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      dependencyType: 'optionaldependencies',
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'bun link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'bun install /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with correct dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'pnpm',
+      name: 'pnpm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'pnpm add --save-dev /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'dev',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'pnpm link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'pnpm add --save-dev /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+  })
+
+  it('should propagate non-workspace errors during link', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'pnpm',
+      name: 'pnpm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(new Error('Some other error'), '', 'Some other error')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(1)
+    expect(result.success).toBeFalsy()
+    expect(result.message).toContain('Failed to create link')
+  })
+
+  it('should fallback to add with npm package manager and optional dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'npm',
+      name: 'npm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          null,
+          'npm install --save-optional /path/to/package output',
+          '',
+        )
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'optional',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'npm link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'npm install --save-optional /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with npm package manager and peer dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'npm',
+      name: 'npm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'npm install --save-peer /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      dependencyType: 'peerdependencies',
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'npm link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'npm install --save-peer /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with pnpm package manager and optional dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'pnpm',
+      name: 'pnpm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'pnpm add --save-optional /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'optional',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'pnpm link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'pnpm add --save-optional /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with pnpm package manager and peer dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '8.0.0',
+      agent: 'pnpm',
+      name: 'pnpm',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'pnpm add --save-peer /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'peer',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'pnpm link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'pnpm add --save-peer /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with bun package manager and prod dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '1.0.0',
+      agent: 'bun',
+      name: 'bun',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'bun install /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'prod',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'bun link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'bun install /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with yarn package manager and dev dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '1.22.0',
+      agent: 'yarn',
+      name: 'yarn',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'yarn add --dev /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      dependencyType: 'devdependencies',
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'yarn link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'yarn add --dev /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
+  })
+
+  it('should fallback to add with yarn package manager and prod dependency type', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package' || filePath === '/path/to/project') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
+    vi.mocked(detect).mockResolvedValueOnce({
+      version: '1.22.0',
+      agent: 'yarn',
+      name: 'yarn',
+    })
+
+    let mockExec = vi.fn()
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(
+          new Error('ERR_PNPM_WORKSPACE_PKG_NOT_FOUND'),
+          '',
+          'ERR_PNPM_WORKSPACE_PKG_NOT_FOUND',
+        )
+      },
+    )
+    mockExec.mockImplementationOnce(
+      (
+        _cmd,
+        _options,
+        callback: (
+          error: Error | null,
+          command: string,
+          commandArguments: string,
+        ) => void,
+      ) => {
+        callback(null, 'yarn add /path/to/package output', '')
+      },
+    )
+    vi.mocked(cp.exec).mockImplementation(mockExec)
+
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+      dependencyType: 'prod',
+    })
+
+    expect(cp.exec).toHaveBeenCalledTimes(2)
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      1,
+      'yarn link /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(cp.exec).toHaveBeenNthCalledWith(
+      2,
+      'yarn add /path/to/package',
+      { cwd: '/path/to/project', env: process.env },
+      expect.any(Function),
+    )
+    expect(result.success).toBeTruthy()
+    expect(result.message).toContain('Successfully added')
+    expect(result.message).toContain('fallback from link')
   })
 
   it('should return error on command execution failure with string error', async () => {
@@ -876,15 +2359,15 @@ describe('npmLink', () => {
       )
     vi.mocked(cp.exec).mockImplementation(mockExec)
 
-    let result = await npmLink(
-      '/path/to/package',
-      '/path/to/project',
-      'package-name',
-    )
+    let result = await npmLink({
+      packagePath: '/path/to/package',
+      projectPath: '/path/to/project',
+      packageName: 'package-name',
+    })
 
     expect(result.success).toBeFalsy()
     expect(result.message).toBe(
-      'Failed to create link: Command execution failed: stderr output',
+      'Failed to create link: Command execution failed: \nstderr output',
     )
     expect(result.error).toBeDefined()
   })

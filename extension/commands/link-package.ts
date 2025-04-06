@@ -108,7 +108,12 @@ let handleLinkPackage = async (
       progress.report({ increment: 0 })
 
       try {
-        let result = await npmLink(packagePath, projectPath, packageName)
+        let result = await npmLink({
+          dependencyType: arguments_.type,
+          packagePath,
+          projectPath,
+          packageName,
+        })
 
         progress.report({ increment: 100 })
 

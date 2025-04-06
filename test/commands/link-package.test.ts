@@ -159,11 +159,12 @@ describe('link-package', () => {
         canSelectMany: false,
       })
 
-      expect(npmLink).toHaveBeenCalledWith(
-        '/mock/new/path',
-        '/mock/workspace',
-        'test-package',
-      )
+      expect(npmLink).toHaveBeenCalledWith({
+        projectPath: '/mock/workspace',
+        dependencyType: 'dependencies',
+        packagePath: '/mock/new/path',
+        packageName: 'test-package',
+      })
     })
 
     it('should prompt for path if no saved package is available', async () => {
@@ -200,11 +201,12 @@ describe('link-package', () => {
         canSelectMany: false,
       })
 
-      expect(npmLink).toHaveBeenCalledWith(
-        '/mock/new/path',
-        '/mock/workspace',
-        'test-package',
-      )
+      expect(npmLink).toHaveBeenCalledWith({
+        projectPath: '/mock/workspace',
+        dependencyType: 'dependencies',
+        packagePath: '/mock/new/path',
+        packageName: 'test-package',
+      })
     })
 
     it('should handle errors during linking', async () => {
@@ -433,11 +435,12 @@ describe('link-package', () => {
         },
       )
 
-      expect(npmLink).toHaveBeenCalledWith(
-        '/mock/saved/path',
-        '/mock/workspace',
-        'test-package',
-      )
+      expect(npmLink).toHaveBeenCalledWith({
+        packagePath: '/mock/saved/path',
+        projectPath: '/mock/workspace',
+        dependencyType: 'dependencies',
+        packageName: 'test-package',
+      })
 
       expect(mockStorageServiceInstance.saveLinkedPackage).toHaveBeenCalledWith(
         {

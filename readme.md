@@ -34,6 +34,7 @@ VS Code Linkify simplifies this process, allowing you to link packages directly 
 - **Multiple package managers.** Automatically detects and supports npm, yarn, pnpm, and bun.
 - **Remembers paths.** No need to repeatedly select package directories.
 - **Hover integration.** Easily link packages by hovering over dependencies in `package.json`.
+- **Smart error handling.** Automatically handles workspace dependency errors in pnpm projects.
 
 ## Installation
 
@@ -78,6 +79,7 @@ If you encounter any issues:
 1. Make sure your package has a valid `package.json` file
 2. Check that you have the necessary permissions to create symlinks
 3. Verify that your package manager (npm, yarn, pnpm, or bun) is installed and accessible
+4. **For pnpm workspace users:** If you encounter errors like `ERR_PNPM_WORKSPACE_PKG_NOT_FOUND` or issues with workspace dependencies, the extension will automatically try to use `pnpm add` as a fallback method
 
 ## Contributing
 
