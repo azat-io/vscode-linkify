@@ -35,21 +35,6 @@ VS Code Linkify simplifies this process, allowing you to link packages directly 
 - **Remembers paths.** No need to repeatedly select package directories.
 - **Hover integration.** Easily link packages by hovering over dependencies in `package.json`.
 
-<picture>
-  <source
-    srcset="https://raw.githubusercontent.com/azat-io/vscode-linkify/main/assets/demo-light.webp"
-    media="(prefers-color-scheme: light)"
-  />
-  <source
-    srcset="https://raw.githubusercontent.com/azat-io/vscode-linkify/main/assets/demo-dark.webp"
-    media="(prefers-color-scheme: dark)"
-  />
-  <img
-    src="https://raw.githubusercontent.com/azat-io/vscode-linkify/main/assets/demo-light.webp"
-    alt="VS Code Linkify Demo"
-  />
-</picture>
-
 ## Installation
 
 Install the extension from the [Marketplace](https://marketplace.visualstudio.com/items?itemName=azat-io.vscode-linkify) or search for "Linkify" in the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`).
@@ -64,6 +49,21 @@ Using this extension is very simple:
 4. Select the directory of the local package.
 
 The extension automatically completes the linking and notifies you upon successful completion!
+
+<picture>
+  <source
+    srcset="https://raw.githubusercontent.com/azat-io/vscode-linkify/main/assets/demo-light.webp"
+    media="(prefers-color-scheme: light)"
+  />
+  <source
+    srcset="https://raw.githubusercontent.com/azat-io/vscode-linkify/main/assets/demo-dark.webp"
+    media="(prefers-color-scheme: dark)"
+  />
+  <img
+    src="https://raw.githubusercontent.com/azat-io/vscode-linkify/main/assets/demo-light.webp"
+    alt="VS Code Linkify Demo"
+  />
+</picture>
 
 ## Use Cases
 
