@@ -40,6 +40,10 @@ describe('npmLink', () => {
       throw new Error('File not found')
     })
 
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
     vi.mocked(detect).mockResolvedValueOnce({
       version: '8.0.0',
       agent: 'npm',
@@ -71,6 +75,10 @@ describe('npmLink', () => {
 
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
     expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
+    expect(fs.readFile).toHaveBeenCalledWith(
+      '/path/to/package/package.json',
+      'utf8',
+    )
     expect(detect).toHaveBeenCalledWith({
       cwd: '/path/to/project',
     })
@@ -82,6 +90,72 @@ describe('npmLink', () => {
     expect(result.success).toBeTruthy()
     expect(result.message).toContain(
       'Successfully linked package-name from /path/to/package to project at /path/to/project',
+    )
+  })
+
+  it('should return error if package.json has no name field', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(JSON.stringify({}))
+
+    let result = await npmLink(
+      '/path/to/package',
+      '/path/to/project',
+      'package-name',
+    )
+
+    expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
+    expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
+    expect(fs.readFile).toHaveBeenCalledWith(
+      '/path/to/package/package.json',
+      'utf8',
+    )
+    expect(result.success).toBeFalsy()
+    expect(result.message).toContain('No package name found in package.json')
+  })
+
+  it('should return error if package name does not match', async () => {
+    vi.mocked(fs.stat).mockImplementation(filePath => {
+      if (filePath === '/path/to/package') {
+        return Promise.resolve({
+          isDirectory: () => true,
+        } as unknown as Stats)
+      }
+      if (filePath === '/path/to/package/package.json') {
+        return Promise.resolve({ isFile: () => true } as unknown as Stats)
+      }
+      throw new Error('File not found')
+    })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'different-package-name' }),
+    )
+
+    let result = await npmLink(
+      '/path/to/package',
+      '/path/to/project',
+      'package-name',
+    )
+
+    expect(fs.stat).toHaveBeenCalledWith('/path/to/package')
+    expect(fs.stat).toHaveBeenCalledWith('/path/to/package/package.json')
+    expect(fs.readFile).toHaveBeenCalledWith(
+      '/path/to/package/package.json',
+      'utf8',
+    )
+    expect(result.success).toBeFalsy()
+    expect(result.message).toContain(
+      'Package name in package.json (different-package-name) does not match provided package name (package-name)',
     )
   })
 
@@ -97,6 +171,10 @@ describe('npmLink', () => {
       }
       throw new Error('File not found')
     })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
 
     vi.mocked(detect).mockResolvedValueOnce({
       version: '1.22.0',
@@ -156,6 +234,10 @@ describe('npmLink', () => {
       throw new Error('File not found')
     })
 
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
     vi.mocked(detect).mockResolvedValueOnce(null)
 
     let mockExec = vi
@@ -209,6 +291,10 @@ describe('npmLink', () => {
       }
       throw new Error('File not found')
     })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
 
     vi.mocked(detect).mockResolvedValueOnce({
       version: '1.0.0',
@@ -268,6 +354,10 @@ describe('npmLink', () => {
       throw new Error('File not found')
     })
 
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
     vi.mocked(detect).mockRejectedValueOnce(new Error('Detection failed'))
 
     let mockExec = vi
@@ -321,6 +411,10 @@ describe('npmLink', () => {
       }
       throw new Error('File not found')
     })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
 
     let error = 'Detection failed' as unknown as Error
     vi.mocked(detect).mockRejectedValueOnce(error)
@@ -377,6 +471,10 @@ describe('npmLink', () => {
       throw new Error('File not found')
     })
 
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
     vi.mocked(detect).mockRejectedValueOnce('String error' as unknown as Error)
 
     let mockExec = vi
@@ -430,6 +528,10 @@ describe('npmLink', () => {
       }
       throw new Error('File not found')
     })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
 
     vi.mocked(detect).mockResolvedValueOnce({
       agent: 'unknown',
@@ -489,6 +591,10 @@ describe('npmLink', () => {
       throw new Error('File not found')
     })
 
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
+
     vi.mocked(detect).mockResolvedValueOnce({
       version: '1.0.0',
       agent: 'bun',
@@ -546,6 +652,10 @@ describe('npmLink', () => {
       }
       throw new Error('File not found')
     })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
 
     vi.mocked(detect).mockResolvedValueOnce({
       version: '8.0.0',
@@ -737,6 +847,10 @@ describe('npmLink', () => {
       }
       throw new Error('File not found')
     })
+
+    vi.mocked(fs.readFile).mockResolvedValueOnce(
+      JSON.stringify({ name: 'package-name' }),
+    )
 
     vi.mocked(detect).mockResolvedValueOnce({
       version: '8.0.0',

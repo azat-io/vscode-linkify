@@ -79,7 +79,10 @@ export let npmLink = async (
   packageName: string,
 ): Promise<LinkResult> => {
   try {
-    if (!(await fs.stat(packagePath)).isDirectory()) {
+    let packagePathStats = await fs.stat(packagePath)
+    let isPackagePathDirectory = packagePathStats.isDirectory()
+
+    if (!isPackagePathDirectory) {
       return {
         message: `Package directory does not exist: ${packagePath}`,
         success: false,
@@ -87,9 +90,31 @@ export let npmLink = async (
     }
 
     let packageJsonPath = path.join(packagePath, 'package.json')
-    if (!(await fs.stat(packageJsonPath)).isFile()) {
+    let packageJsonStats = await fs.stat(packageJsonPath)
+    let isPackageJsonFile = packageJsonStats.isFile()
+
+    if (!isPackageJsonFile) {
       return {
         message: `No package.json found in: ${packagePath}`,
+        success: false,
+      }
+    }
+
+    let packageJsonContent = await fs.readFile(packageJsonPath, 'utf8')
+    let packageJson = JSON.parse(packageJsonContent) as { name?: string }
+
+    if (!packageJson.name) {
+      return {
+        message: `No package name found in package.json: ${packageJsonPath}`,
+        success: false,
+      }
+    }
+
+    if (packageJson.name !== packageName) {
+      return {
+        message: `Package name in package.json (${
+          packageJson.name
+        }) does not match provided package name (${packageName})`,
         success: false,
       }
     }
@@ -117,7 +142,9 @@ export let npmLink = async (
     let output = await executeCommand(linkCommand, projectPath)
 
     return {
-      message: `Successfully linked ${packageName} from ${packagePath} to project at ${projectPath}\n${output}`,
+      message: `Successfully linked ${packageName} from ${
+        packagePath
+      } to project at ${projectPath}\n${output}`,
       success: true,
     }
   } catch (error) {
