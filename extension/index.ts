@@ -21,7 +21,7 @@ export let activate = (context: vscode.ExtensionContext): void => {
   context.subscriptions.push(packageHoverProviderDisposable)
   logger.info('Package hover provider registered')
 
-  logger.info('Package Linker activated successfully')
+  logger.info('Linkify activated successfully')
 }
 
 /**

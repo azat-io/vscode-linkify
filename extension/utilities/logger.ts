@@ -77,7 +77,7 @@ let getFormattedDate = (): string =>
  * @returns {vscode.OutputChannel} VS Code output channel instance.
  */
 let getOutputChannel = (): vscode.OutputChannel => {
-  outputChannel ??= vscode.window.createOutputChannel('Package Linker')
+  outputChannel ??= vscode.window.createOutputChannel('Linkify')
   return outputChannel
 }
 
@@ -112,7 +112,7 @@ let showErrorMessage = (message: string): void => {
 }
 
 /**
- * Logger for the Package Linker extension.
+ * Logger for the Linkify extension.
  *
  * @example
  *   // Initialize the logger
@@ -200,6 +200,6 @@ export let logger: Logger = {
    */
   init: (): void => {
     let channel = getOutputChannel()
-    channel.appendLine(`${getFormattedDate()}: Package Linker initialized`)
+    channel.appendLine(`${getFormattedDate()}: Linkify initialized`)
   },
 }

@@ -54,9 +54,7 @@ describe('logger', () => {
 
   it('should create an output channel when initialized', () => {
     logger.init()
-    expect(vscode.window.createOutputChannel).toHaveBeenCalledWith(
-      'Package Linker',
-    )
+    expect(vscode.window.createOutputChannel).toHaveBeenCalledWith('Linkify')
   })
 
   it('should log info message', () => {
